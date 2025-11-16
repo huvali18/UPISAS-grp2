@@ -31,7 +31,10 @@ class Strategy(ABC):
             if key not in data:
                 data[key] = []
             data[key].append(fresh_data[key])
-        if(verbose): print("[Knowledge]\tdata monitored so far: " + str(self.knowledge.monitored_data))
+        # if(verbose): print("[Knowledge]\tdata monitored so far: " + str(self.knowledge.monitored_data))
+        # instead print keys and number of values for each key
+        if(verbose):
+            for key in data: logging.info(f"{key}: {len(data[key])}")
         return True
 
     def execute(self, adaptation=None, endpoint_suffix="execute", with_validation=True):
@@ -45,6 +48,11 @@ class Strategy(ABC):
         if response.status_code == 404:
             logging.error("Cannot execute adaptation on remote system, check that the execute endpoint exists.")
             raise EndpointNotReachable
+        elif response.status_code != 200:
+            logging.error(f"Execute request failed with status code: {response.status_code}")
+            logging.error(f"Response: {response.text}")
+            return False
+        logging.info(f"Execute successful: {response.text}")
         return True
 
     def get_adaptation_options(self, endpoint_suffix: "API Endpoint" = "adaptation_options", with_validation=True):

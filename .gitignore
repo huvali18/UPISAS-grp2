@@ -4,3 +4,8 @@ demo-managed-system/package-lock.json
 venv
 __pycache__
 UPISAS/experiment_runner_configs/experiments
+.venv
+*.pyc
+*.lock
+scripts
+results

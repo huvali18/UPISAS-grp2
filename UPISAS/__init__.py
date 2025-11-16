@@ -24,7 +24,7 @@ def show_progress(line, progress):
 
 def get_response_for_get_request(url):
     try:
-        logging.info("GET request to " + str(url))
+        # logging.info("GET request to " + str(url))
         response = requests.get(url)
         return response
     except requests.exceptions.ConnectionError as e:
