@@ -1,14 +1,3 @@
-"""
-Experiment Runner Config for Phase 1 & 2: Learning Situations via Clustering
-
-Uses the experiment runner to:
-1. Run 14 experiments with different car counts
-2. Collect monitoring data for each
-3. Perform clustering to identify situations
-
-This is cleaner than separate scripts!
-"""
-
 from EventManager.Models.RunnerEvents import RunnerEvents
 from EventManager.EventSubscriptionController import EventSubscriptionController
 from ConfigValidator.Config.Models.RunTableModel import RunTableModel
@@ -41,11 +30,9 @@ class RunnerConfig:
     exemplar = None
     strategy = None
     
-    # Learning configuration
-    SAMPLES_PER_RUN = 1000  # Paper used 5000 samples per car count
-    MONITOR_INTERVAL = 0.05 # Seconds between monitoring calls
+    SAMPLES_PER_RUN = 1000
+    MONITOR_INTERVAL = 0.05
     
-    # Store all collected data across runs
     all_monitoring_data = {}
 
     def __init__(self):

@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "created_at": "2025-11-17T00:00:00Z",
+    "description": "sample knowledge base",
+    "version": "1.0"
+  },
+  "situations": {
+    "0": {
+      "name": "low_traffic",
+      "range": [101, 500],
+      "representative": 500,
+      "optimal_config": null
+    },
+    "1": {
+      "name": "medium_traffic",
+      "range": [501, 700],
+      "representative": 700,
+      "optimal_config": null
+    },
+    "2": {
+      "name": "high_traffic",
+      "range": [701, 800],
+      "representative": 800,
+      "optimal_config": null
+    }
+  }
+}
+
