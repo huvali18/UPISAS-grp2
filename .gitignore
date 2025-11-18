@@ -9,3 +9,5 @@ UPISAS/experiment_runner_configs/experiments
 *.lock
 scripts
 results
+diagrams
+*.png
